@@ -1,9 +1,9 @@
-FROM maven:3.9.6-eclipse-temurin-17
+FROM openjdk:17
 
 WORKDIR /app
 
 COPY . .
 
-RUN mvn clean package
+RUN javac src/main/java/Hello.java
 
-CMD ["java", "-jar", "target/*.jar"]
+CMD ["java","-cp","src/main/java","Hello"]
